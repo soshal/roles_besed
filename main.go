@@ -12,7 +12,7 @@ import (
     "github.com/dgrijalva/jwt-go"
     "os"
     "time"
-	"gorm.io/gorm"
+    "gorm.io/gorm"
 )
 
 func generateToken(userID uint) (string, error) {

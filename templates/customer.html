@@ -18,10 +18,10 @@
                     'Content-Type': 'application/json',
                     'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MjA2MTQ4NTMsInVzZXJfaWQiOjF9.jg2aVl0X6ETkQB1L52kTi9GhiUxi-k9UGM8FdX5dfXw'
                 },
-                body: JSON.stringify({ data })
+                body: JSON.stringify({ data: data }) // Corrected JSON.stringify usage
             });
             const result = await response.json();
-            alert(result.message);
+            alert(result.message); // Show server response message
         }
     </script>
 </body>
