@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Customer Management</title>
+</head>
+<body>
+    <h1>Customer Management</h1>
+    <form id="customer-form">
+        <input type="text" id="customer-data" placeholder="Customer Data">
+        <button type="button" onclick="createCustomer()">Create Customer</button>
+    </form>
+    <script>
+        async function createCustomer() {
+            const data = document.getElementById('customer-data').value;
+            const response = await fetch('/customer', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MjA2MTQ4NTMsInVzZXJfaWQiOjF9.jg2aVl0X6ETkQB1L52kTi9GhiUxi-k9UGM8FdX5dfXw'
+                },
+                body: JSON.stringify({ data })
+            });
+            const result = await response.json();
+            alert(result.message);
+        }
+    </script>
+</body>
+</html>
