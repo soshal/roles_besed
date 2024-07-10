@@ -59,6 +59,9 @@ func AuthMiddleware() gin.HandlerFunc {
                 return
             }
 
+            // Use the user variable for further processing if necessary
+            fmt.Printf("Authenticated user: %v\n", user)
+
             // Attach user to the context
             c.Set("user", user)
             c.Next()
@@ -81,7 +84,6 @@ func Authorize(role, resource, action string) gin.HandlerFunc {
 
         // Assuming the user has Roles field
         roles := user.(models.User).Roles
-
         // Check if user has the required role and permission
         if hasPermission(roles, role, resource, action) {
             c.Next()

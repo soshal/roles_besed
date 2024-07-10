@@ -6,7 +6,7 @@ import (
 
 type User struct {
     gorm.Model
-    Username string `gorm:"unique;not null"`
+    Username string `gorm:"unique; not null"`
     Password string `gorm:"not null"`
     RoleID   uint
     Role     Role

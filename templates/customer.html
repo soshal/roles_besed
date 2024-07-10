@@ -14,6 +14,7 @@
             const data = document.getElementById('customer-data').value;
             const response = await fetch('/customer', {
                 method: 'POST',
+                credentials:"include",
                 headers: {
                     'Content-Type': 'application/json',
                     'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MjA2MTQ4NTMsInVzZXJfaWQiOjF9.jg2aVl0X6ETkQB1L52kTi9GhiUxi-k9UGM8FdX5dfXw'
